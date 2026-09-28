@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hermes Google Workspace Connector</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65; max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 5rem;
+    color: #1a1a1a; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e6e6; background: #121212; }
+    a { color: #7fb8ff; }
+    code { background: #1e1e1e; }
+  }
+  h1 { font-size: 1.7rem; margin-bottom: .25rem; }
+  .sub { color: #666; margin-top: 0; font-size: .95rem; }
+  @media (prefers-color-scheme: dark) { .sub { color: #999; } }
+  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
+  ul { padding-left: 1.25rem; }
+  code { background: #f2f2f2; padding: .12em .35em; border-radius: 3px; font-size: .9em; }
+  footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid #ddd; font-size: .875rem; color: #666; }
+  @media (prefers-color-scheme: dark) { footer { border-color: #333; color: #999; } }
+</style>
+</head>
+<body>
+
+<h1>Hermes Google Workspace Connector</h1>
+<p class="sub">A private, single-user integration for the Hermes Agent.</p>
+
+<h2>What this is</h2>
+<p>
+  This application is a personal-use connector that allows the <strong>Hermes Agent</strong> &mdash; a
+  self-hosted AI assistant running on its owner's own computer &mdash; to work with that same owner's
+  Google Workspace data on his behalf.
+</p>
+<p>
+  There is exactly one user: the owner of the Google Account that grants access. The application is not
+  distributed, not offered as a service, and not available to the public. It exists so the owner can ask
+  his own assistant to read his own email, check his own calendar, and manage his own files.
+</p>
+
+<h2>What it can do</h2>
+<ul>
+  <li>Read, search, and send email in the owner's Gmail account</li>
+  <li>Read and create events on the owner's Google Calendar</li>
+  <li>Read, upload, organize, and share files in the owner's Google Drive</li>
+  <li>Read and write the owner's Google Sheets and Google Docs</li>
+  <li>Read the owner's Google Contacts</li>
+</ul>
+
+<h2>What it does not do</h2>
+<ul>
+  <li>It does not collect data from anyone other than its single owner</li>
+  <li>It does not sell, rent, or share data with any third party</li>
+  <li>It does not use Google user data for advertising or profiling</li>
+  <li>It does not transmit data to any server other than Google's own APIs and the language model
+      provider the owner has configured</li>
+</ul>
+
+<h2>How it works</h2>
+<p>
+  The connector runs locally on the owner's machine using Google's official OAuth 2.0 flow. Access is
+  granted through the standard Google consent screen, can be revoked by the owner at any time at
+  <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, and is limited
+  to the specific scopes the owner approves.
+</p>
+
+<footer>
+  <p>
+    <a href="./privacy.html">Privacy Policy</a>
+  </p>
+  <p>Personal use project. Not affiliated with or endorsed by Google LLC.</p>
+</footer>
+
+</body>
+</html>
