@@ -14,13 +14,19 @@
   @media (prefers-color-scheme: dark) {
     body { color: #e6e6e6; background: #121212; }
     a { color: #7fb8ff; }
-    code { background: #1e1e1e; }
   }
   h1 { font-size: 1.7rem; margin-bottom: .25rem; }
   .sub { color: #666; margin-top: 0; font-size: .95rem; }
   @media (prefers-color-scheme: dark) { .sub { color: #999; } }
   h2 { font-size: 1.15rem; margin-top: 2.25rem; }
   ul { padding-left: 1.25rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .925rem; }
+  th, td { border: 1px solid #ddd; padding: .5rem .65rem; text-align: left; vertical-align: top; }
+  th { background: #f6f6f6; }
+  @media (prefers-color-scheme: dark) {
+    th, td { border-color: #333; }
+    th { background: #1c1c1c; }
+  }
   footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid #ddd; font-size: .875rem; color: #666; }
   @media (prefers-color-scheme: dark) { footer { border-color: #333; color: #999; } }
 </style>
@@ -28,95 +34,263 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="sub">Hermes Google Workspace Connector &nbsp;&middot;&nbsp; Last updated: September 28, 2026</p>
+<p class="sub">Hermes Google Workspace Connector &nbsp;&middot;&nbsp; Effective: September 28, 2026 &nbsp;&middot;&nbsp; Last updated: September 28, 2026</p>
 
-<h2>Summary</h2>
+<h2>1. Summary</h2>
 <p>
-  This application has a single user: its owner. It accesses Google user data belonging to that owner,
-  on that owner's own computer, for that owner's own benefit. No data is collected about anyone else,
-  and no data is sold, shared, or transferred to any third party.
+  This application &mdash; the <strong>Hermes Google Workspace Connector</strong> &mdash; is a private,
+  self-hosted software integration with exactly one user: the individual who owns and operates the
+  computer on which it runs, and who owns the Google Account that grants it access. It is not a
+  commercial product, is not offered to the public, is not distributed or licensed to anyone else, and
+  operates no servers of its own.
+</p>
+<p>
+  Because the application has a single user who is also its owner, the data it accesses is that user's
+  own data, processed on that user's own equipment, for that user's own benefit. No personal data
+  belonging to any other person is collected, and no data is sold, rented, or transferred to any third
+  party for any commercial purpose.
 </p>
 
-<h2>What data is accessed</h2>
-<p>When the owner grants access, this application may access the following data in the owner's own
-   Google Account:</p>
+<h2>2. Who this policy applies to</h2>
+<p>
+  This policy applies to the single individual who installs, configures, authorizes, and operates this
+  application. There are no other users, no accounts to create, no public sign-up, and no customers.
+  If you are not the individual who personally authorized this application on your own device, this
+  application holds no data about you and this policy does not apply to you.
+</p>
+
+<h2>3. What data the application accesses</h2>
+<p>
+  When the owner grants authorization through Google's standard OAuth 2.0 consent screen, the
+  application may access the following categories of data belonging to that owner's own Google Account.
+  The table below describes each category, what is accessed, and why it is needed:
+</p>
+
+<table>
+  <thead>
+    <tr><th>Google service</th><th>Data accessed</th><th>Why it is needed</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gmail</td>
+      <td>Message contents, subject lines, senders and recipients, labels, attachment contents and filenames, message metadata</td>
+      <td>To let the owner ask his assistant to search, read, summarize, label, and send email on his behalf</td>
+    </tr>
+    <tr>
+      <td>Google Calendar</td>
+      <td>Calendar names, event titles, times, locations, descriptions, attendees, reminders</td>
+      <td>To let the owner check his schedule, create events, and review upcoming commitments</td>
+    </tr>
+    <tr>
+      <td>Google Drive</td>
+      <td>File and folder names, contents, MIME types, sizes, modification dates, sharing permissions, parent folders</td>
+      <td>To let the owner find, read, upload, organize, and share his own files</td>
+    </tr>
+    <tr>
+      <td>Google Docs</td>
+      <td>Document text content and document structure</td>
+      <td>To let the owner read and draft documents, such as research notes or teaching material</td>
+    </tr>
+    <tr>
+      <td>Google Sheets</td>
+      <td>Spreadsheet cell values and sheet structure</td>
+      <td>To let the owner read and update his own tracking spreadsheets</td>
+    </tr>
+    <tr>
+      <td>Google Contacts</td>
+      <td>Names, email addresses, phone numbers</td>
+      <td>To let the owner look up contact details when sending email or scheduling events</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  The application accesses only these categories, and only within the owner's own Google Account. It
+  has no mechanism to access any other person's Google Account, and it never attempts to.
+</p>
+
+<h2>4. How data is used</h2>
+<p>
+  Accessed data is used for exactly one purpose: to carry out instructions the owner gives to his own
+  local AI assistant. Typical uses include searching email for a specific message, summarizing a
+  document, checking the day's calendar, drafting a reply, or filing a file into a folder.
+</p>
+<p>
+  Data is never used for advertising, marketing, profiling, behavioral targeting, creditworthiness
+  assessment, resale, or any purpose unrelated to the owner's direct request. No analytics, telemetry,
+  or usage tracking of any kind is performed on Google user data. No automated decision-making
+  producing legal or similarly significant effects is performed on Google user data.
+</p>
+
+<h2>5. How data is stored</h2>
+<p>
+  Google user data is processed and stored locally on the owner's own computer. There is no remote
+  database, no cloud storage bucket, and no application server; the application operates no
+  infrastructure of its own. Consequently, no copy of any Google user data is held by this application
+  anywhere other than the owner's own device.
+</p>
+<p>
+  The only persistent credential the application stores is an OAuth 2.0 refresh token, saved to the
+  local filesystem on that computer with owner-only file permissions. That token permits the
+  application to request fresh access tokens from Google; it does not itself contain email contents,
+  calendar entries, file contents, or contact details. Deleting the local token file immediately
+  removes the stored credential.
+</p>
+
+<h2>6. How data is shared</h2>
+<p>
+  Google user data is <strong>not sold, rented, traded, or shared with any third party for any
+  commercial purpose whatsoever</strong>. There is no advertising network, no data broker, no analytics
+  provider, and no marketing partner involved. The only circumstances in which data leaves the owner's
+  computer are the following, each narrow and necessary for the application to function:
+</p>
 <ul>
-  <li><strong>Gmail</strong> &mdash; message contents, headers, labels, and attachments</li>
-  <li><strong>Google Calendar</strong> &mdash; event details, attendees, and calendars</li>
-  <li><strong>Google Drive</strong> &mdash; file names, contents, metadata, and sharing settings</li>
-  <li><strong>Google Sheets and Google Docs</strong> &mdash; document and spreadsheet contents</li>
-  <li><strong>Google Contacts</strong> &mdash; names, email addresses, and phone numbers</li>
+  <li>
+    <strong>Google's own APIs.</strong> Data requests go to Google, and actions the owner requests are
+    sent back to Google. Google is the source and the destination of all Google user data.
+  </li>
+  <li>
+    <strong>The owner's configured AI model provider.</strong> When the owner asks his assistant a
+    question about his own data &mdash; for example, a request to summarize an email &mdash; the
+    relevant portion of that content is transmitted to the AI model provider the owner has personally
+    selected, configured, and pays for directly, solely to generate the requested response. That
+    provider processes the content under its own terms and the owner's own account with it. The owner
+    controls which provider this is and can change or disable it at any time.
+  </li>
+  <li>
+    <strong>Legal obligation.</strong> Data may be disclosed if required to do so by valid legal
+    process, such as a court order or subpoena, or as otherwise required by applicable law.
+  </li>
 </ul>
-
-<h2>How data is used</h2>
 <p>
-  Accessed data is used solely to carry out instructions the owner gives to his local AI assistant &mdash;
-  for example, searching email, summarizing a document, creating a calendar event, or organizing files.
-  Data is never used for advertising, profiling, marketing, creditworthiness, or any purpose unrelated to
-  the owner's direct request.
+  No other party receives Google user data, and no data is transferred to any party for any purpose
+  beyond operating the application for the owner.
 </p>
 
-<h2>How data is stored</h2>
+<h2>7. Data retention</h2>
 <p>
-  Data is processed and stored locally on the owner's own computer. The only persistent credential is an
-  OAuth 2.0 refresh token, stored on that computer's local filesystem with owner-only permissions. No
-  copy of any Google user data is stored on any server operated by this application, because this
-  application operates no servers.
+  This application does not maintain a persistent datastore of Google user data. Data is retrieved from
+  Google's APIs when the owner makes a request, is used to fulfil that request, and is not retained in
+  a dedicated store afterwards. The following retention rules apply:
 </p>
-
-<h2>How data is shared</h2>
-<p>Google user data is <strong>not</strong> shared with any third party, with these narrow exceptions:</p>
 <ul>
   <li>
-    <strong>The configured language model provider.</strong> When the owner asks his assistant a question
-    about his own data, the relevant content may be transmitted to the AI model provider the owner has
-    personally configured and pays for, solely to generate the requested response.
+    <strong>OAuth credentials (refresh token):</strong> retained until the owner revokes access or
+    deletes the local token file. This is a credential, not user data.
   </li>
   <li>
-    <strong>Google's own APIs</strong>, which are the source of the data and the destination of any
-    action the owner requests.
+    <strong>Conversational context:</strong> the local assistant keeps a short working context on the
+    owner's own device so that follow-up questions make sense. This lives only on the owner's computer
+    and is fully under the owner's control.
   </li>
   <li>
-    <strong>Legal requirement</strong>, if compelled by valid legal process.
+    <strong>Copies made at the owner's request:</strong> if the owner asks the assistant to write a
+    file, export a document, or save a summary, the resulting file is stored on the owner's own device
+    at a location the owner chooses.
   </li>
 </ul>
-
-<h2>Data retention and deletion</h2>
 <p>
-  The owner may revoke this application's access at any time at
-  <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, which
-  immediately and permanently ends all further access. Deleting the local token file on the owner's
-  computer removes the stored credential. Because all data resides on the owner's own machine, the owner
-  retains complete control over its deletion.
+  There is no separate retention schedule beyond these, because there is no separate store of data to
+  schedule the deletion of.
 </p>
 
-<h2>Compliance with Google's Limited Use requirements</h2>
+<h2>8. How to revoke access and delete data</h2>
+<p>
+  The owner can end all access immediately and permanently at any time, without asking anyone and
+  without any waiting period:
+</p>
+<ul>
+  <li>
+    <strong>Revoke the authorization.</strong> Visit
+    <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, locate
+    this application in the list of connected apps, and remove its access. All further API access stops
+    instantly and the previously issued refresh token stops working.
+  </li>
+  <li>
+    <strong>Delete the local credential.</strong> Remove the local OAuth token file from the owner's
+    computer. This removes the stored credential entirely.
+  </li>
+  <li>
+    <strong>Delete any local files.</strong> Because all data resides on the owner's own machine, the
+    owner has direct filesystem control over its deletion at all times.
+  </li>
+</ul>
+<p>
+  Because the application stores no Google user data on any remote system, there is no remote copy to
+  request deletion of &mdash; revocation is complete and immediate.
+</p>
+
+<h2>9. Security</h2>
+<p>
+  Access is granted exclusively through Google's official OAuth 2.0 authorization flow. The owner's
+  Google password is never seen, requested, or stored by this application; only a revocable OAuth token
+  is held. Credentials are stored locally with restrictive file permissions. Data in transit between
+  the application and Google's APIs is encrypted using TLS. The application accepts no inbound network
+  connections from the internet, exposes no listening ports or public services, and therefore presents
+  no remote attack surface. It runs on a single personal computer under the owner's exclusive physical
+  control.
+</p>
+
+<h2>10. Compliance with Google API Services User Data Policy</h2>
 <p>
   This application's use and transfer of information received from Google APIs adheres to the
   <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User
-  Data Policy</a>, including the Limited Use requirements.
+  Data Policy</a>, including the <strong>Limited Use</strong> requirements. Specifically:
+</p>
+<ul>
+  <li>
+    Google user data is used only to provide and improve the single user's own experience of this
+    application &mdash; the features described in this policy. It is not used for any other purpose.
+  </li>
+  <li>
+    Google user data is not transferred to third parties except as necessary to provide or improve
+    those features, to comply with applicable law, or as part of a merger or acquisition as permitted
+    by that policy. It is never used for advertising, ad targeting, or sale.
+  </li>
+  <li>
+    Google user data is not used to determine creditworthiness or for lending purposes.
+  </li>
+  <li>
+    No person other than the owner reads Google user data, because no person other than the owner is
+    involved in operating this application.
+  </li>
+</ul>
+
+<h2>11. Cookies and tracking technologies</h2>
+<p>
+  This website consists of static pages. It does not set cookies, does not run analytics or tracking
+  scripts, does not display advertising, does not embed third-party trackers, and does not fingerprint
+  visitors. No visitor data is collected by this site.
 </p>
 
-<h2>Security</h2>
+<h2>12. International data transfers</h2>
 <p>
-  Access is granted only through Google's official OAuth 2.0 authorization flow. Credentials are stored
-  locally with restrictive file permissions. The application is not publicly accessible, has no remote
-  attack surface, and accepts no inbound connections.
+  The application runs on the owner's own computer. Data is not transferred across borders by this
+  application. When the owner's assistant communicates with Google's APIs or with the owner's chosen AI
+  model provider, those services apply their own data-handling terms, which the owner has accepted
+  directly with them.
 </p>
 
-<h2>Children</h2>
-<p>This application is not directed at children and is not available to the public.</p>
-
-<h2>Changes to this policy</h2>
+<h2>13. Children's privacy</h2>
 <p>
-  Any changes will be posted on this page with an updated revision date. Continued use after a change
-  constitutes acceptance of the revised policy.
+  This application is not directed at children, is not available to the public, and is not intended for
+  use by anyone under the age of 16. It has exactly one adult user, its owner. No data relating to
+  children is knowingly collected or processed.
 </p>
 
-<h2>Contact</h2>
+<h2>14. Changes to this policy</h2>
 <p>
-  This is a private, single-user application. Questions about this policy may be raised through the
-  Google Account that owns the Cloud project.
+  This policy may be updated to reflect changes in the application's functionality or in applicable
+  law. When it is updated, the "Last updated" date at the top of this page will be revised. Continued
+  operation of the application after a change constitutes acceptance of the revised policy.
+  Substantive changes will not be applied retroactively to data already processed.
+</p>
+
+<h2>15. Contact</h2>
+<p>
+  This is a private, single-user application operated by its owner. Questions about this policy, or
+  requests relating to data processed by it, may be directed to the owner through the Google Account
+  that administers the associated Google Cloud project.
 </p>
 
 <footer>
